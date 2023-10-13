@@ -180,3 +180,10 @@ document.addEventListener("keyup", function (event) {
         prev.click();
     }
 });
+
+const volumeSlider = document.getElementById('volume-slider');
+const audioPlayer = document.querySelector('.audio-player');
+
+volumeSlider.addEventListener('input', function() {
+  audioPlayer.volume = this.value;
+});

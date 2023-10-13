@@ -21,6 +21,7 @@ body {
   display: none;
 }
 
+
 .main-container {
   width: 1250px;
   min-height: 650px;
@@ -182,9 +183,7 @@ h3 {
   height: 80%;
   border-radius: 10px;
 }
-.titre {
-  width: 100%;
-}
+
 .lecteur {
   width: 100%;
   display: block;
@@ -223,6 +222,39 @@ h3 {
 .music_controls .fa-play:hover {
   box-shadow: 0 1rem 2rem 0.2rem rgba(0, 0, 0, 0.4);
   transition: all 0.3s ease-out;
+}
+
+.main-title-vol{
+  width: 450px;
+  max-height: 150px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 5px 0px 5px;
+}
+.titre {
+  width: 50%;
+}
+.volume-controls {
+  margin-top: 30px;
+  margin-left: -10px;
+  width: 50%;
+  font-size: 6px;
+}
+.volume-controls input[type="range"]::-webkit-slider-thumb {
+  background-color: red; /* Set the desired color for the slider thumb */
+}
+
+.volume-controls input[type="range"]::-moz-range-thumb {
+  background-color: red; /* Set the desired color for the slider thumb */
+}
+
+.volume-controls input[type="range"]::-ms-thumb {
+  background-color: red; /* Set the desired color for the slider thumb */
+}
+
+#volume-slider {
+  width: 150px;
+  background-color: red;
 }
 
 .add-button {
