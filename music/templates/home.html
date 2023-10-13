@@ -50,13 +50,16 @@
       <div class="right">
         <div class="playlist-heading">
           <div class="playlist-title">
-            <i class="fas fa-bars"></i>
-            <h1>Playlist</h1>
+            <button id="toggleButton" class="toggle-button" onclick="toggleContent()">
+              <i id="toggleIcon" class="fa-solid fa-feather"></i>
+            </button>
+             <h2 id="contentTitle" style="margin-left: 20px;">Lyrics</h2>
           </div>
-          <img draggable="false" class="playlist-icon" src="/static/images/playlist.jpg" alt="" />
+          <img draggable="false" class="playlist-icon" src="/static/images/subbg.gif" alt="" />
         </div>
 
-        <div class="music">
+        <div class="music" id="playlistContent">
+          <!--Playlist-->
           {% for music in musics %}
             <div class="song">
               <div class="info">
@@ -75,7 +78,16 @@
             <hr />
           {% endfor %}
         </div>
-      </div>
+        <!--Lyrics-->
+        <div class="lyrics" id="lyricsContent" style="display: none;">
+          <h2 class="lyrics-title" style="color: aliceblue; margin:0 0 0 20px;">Lyrics</h2> 
+          <div class="lyrics-content" style="margin-top: 0;">
+            <div class="titre">
+              <p class="lyricstxt" style="color:aliceblue" style="padding-left: 30px;"></p>
+            </div>
+          </div>
+        </div>
+      </div> 
     </div>
 
     <a class="add-button" href="/add"><i class="fas fa-plus"></i></a>
@@ -83,5 +95,33 @@
     {{ music_list|json_script:'musics' }}
 
     <script src="{% static 'js/home.js' %}"></script>
+    <script>
+      function toggleContent() {
+        var toggleButton = document.getElementById('toggleButton');
+        var toggleIcon = document.getElementById('toggleIcon');
+        var playlistContent = document.getElementById('playlistContent');
+        var lyricsContent = document.getElementById('lyricsContent');
+        var contentTitle = document.getElementById('contentTitle');
+    
+        if (playlistContent.style.display === 'none') {
+          // Show playlist and update button icon
+          playlistContent.style.display = 'block';
+          lyricsContent.style.display = 'none';
+          toggleIcon.classList.remove('fas', 'fa-play');
+          toggleIcon.classList.add('fas', 'fa-bars');
+          toggleButton.title = 'Show Lyrics';
+          contentTitle.textContent = 'Show Lyrics';
+        } else {
+          // Show lyrics and update button icon
+          playlistContent.style.display = 'none';
+          lyricsContent.style.display = 'block';
+          toggleIcon.classList.remove('fas', 'fa-bars');
+          toggleIcon.classList.add('fas', 'fa-play');
+          toggleButton.title = 'Show Playlist';
+          contentTitle.textContent = 'Show Playlist';
+        }
+      }
+    </script> 
+    
   </body>
 </html>

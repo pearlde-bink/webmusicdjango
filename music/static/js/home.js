@@ -5,6 +5,7 @@ const next = document.getElementById('next')
 const audio_tracks = document.querySelectorAll('.play-button')
 const song_title = document.querySelector('.song-title')
 const artist = document.querySelector('.artist')
+const lyrics = document.querySelector('.lyricstxt')
 const music_img = document.querySelector('.music_img')
 const main_div = document.querySelector(".main_div");
 const progress = document.querySelector(".progress");
@@ -26,6 +27,7 @@ const setSRC = () => {
     song_title.textContent = musics[musicIndex].title
     artist.textContent = musics[musicIndex].artist
     music_img.setAttribute('src', `media/${musics[musicIndex].cover_image}`)
+    lyrics.textContent = musics[musicIndex].lyrics || "No available lyrics";
 
 }
 
@@ -45,12 +47,14 @@ const changingTheIcons = (Index, play, playOrpause, next = 0) => {
     const element = document.getElementById(Index);
     const title = document.getElementById(`title${Index}`);
     const artist = document.getElementById(`artist${Index}`);
+    const lyric = document.getElementById(`lyrics${Index}`);
     if (playOrpause == 'play') {
         play.classList.replace('fa-play', 'fa-pause');
         element.classList.replace('fa-play', 'fa-pause');
         element.style.color = '#fd3123'
         title.style.color = '#fd3123'
         artist.style.color = '#f44336'
+
     }
     else {
         play.classList.replace('fa-pause', 'fa-play');

@@ -8,12 +8,7 @@ class Music(models.Model):
     album = models.ForeignKey('Album', on_delete=models.SET_NULL, null=True, blank=True)
     audio_file = models.FileField(upload_to='musics/')
     cover_image = models.ImageField(upload_to='music_image/')
-    # image = models.ImageField()
-    # lyrics = models.FileField(upload_to='lyrics/')
-    # audio_file = models.FileField(blank=True, null=True)
-    # audio_link = models.FileField(max_length=200, blank=True, null=True)
-    # duration = models.CharField(max_length=20)
-    # paginate_by = 2
+    lyrics = models.TextField(blank=True, null=True)
     
     def __str__(self):
         return self.title

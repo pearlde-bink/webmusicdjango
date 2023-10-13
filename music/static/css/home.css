@@ -81,6 +81,12 @@ body {
   cursor: pointer;
 }
 
+#lyricsContent.lyrics {
+  max-height: 85%;
+  overflow-y: auto;
+  white-space: pre-line;
+}
+
 hr {
   width: 90%;
   text-align: center;
