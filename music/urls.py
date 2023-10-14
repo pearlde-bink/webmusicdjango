@@ -7,5 +7,7 @@ app_name = 'music'
 
 urlpatterns = [
     path('', views.index, name='home'),
-    path('add/', views.add, name='add')
+    path('add/', views.add, name='add'),
+    # path('main/', views.main, name='main'),
+    # path('vocab/', views.vocab, name='vocab')
 ]

@@ -24,3 +24,9 @@ def add(request):
         data.save()
         return redirect('music:home')
     return render(request, 'add.html')
+
+# def main(request):
+#     return render(request, 'main.html')
+
+# def vocab(request):
+#     return render(request, 'vocab.html')
