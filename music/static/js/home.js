@@ -7,6 +7,7 @@ const song_title = document.querySelector('.song-title')
 const artist = document.querySelector('.artist')
 const lyrics = document.querySelector('.lyricstxt')
 const music_img = document.querySelector('.music_img')
+const vocabs = document.querySelector('.vocab')
 const main_div = document.querySelector(".main_div");
 const progress = document.querySelector(".progress");
 const curr_time = document.querySelector("#current_time");
@@ -28,6 +29,7 @@ const setSRC = () => {
     artist.textContent = musics[musicIndex].artist
     music_img.setAttribute('src', `/home/media/${musics[musicIndex].cover_image}`)
     lyrics.textContent = musics[musicIndex].lyrics || "No available lyrics";
+    vocabs.textContent = musics[musicIndex].vocabs
 
 }
 

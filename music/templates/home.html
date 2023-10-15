@@ -28,11 +28,10 @@
 
               <div class="volume-controls">
                 <i class="fa-light fa-volume-low fa-2xs"></i>
-                <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.5">
+                <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.5" />
                 <i class="fa-light fa-volume-high fa-2xs"></i>
               </div>
             </div>
-             
 
             <div class="progressbar_container">
               <div class="progress_duration_meter">
@@ -60,13 +59,11 @@
       <div class="right">
         <div class="playlist-heading">
           <div class="playlist-title">
-            <button id="toggleButton" class="toggle-button" onclick="toggleContent()">
-              <i id="toggleIcon" class="fa-solid fa-feather"></i>
-            </button>
-             <h2 id="contentTitle" style="margin-left: 20px;">Lyrics</h2>
+            <button id="toggleButton" class="toggle-button" onclick="toggleContent()"><i id="toggleIcon" class="fa-solid fa-feather"></i></button>
+            <h2 id="contentTitle" style="margin-left: 20px;">Lyrics</h2>
           </div>
 
-          <!--vocab-->
+          <!-- vocab -->
           <button class="open-button">
             <img draggable="false" class="playlist-icon" src="/static/images/subbg.gif" alt="" />
             {% comment %} <p>Open</p> {% endcomment %}
@@ -77,66 +74,14 @@
                 <p>Vocab 1 and meaning Vocab 1 and meaning</p>
                 <button class="add-button">Add to list</button>
               </div>
-              <div class="popup-part">
-                <p>Vocab 1 and meaning</p>
-                <button class="add-button">Add to list</button>
-              </div>
-              <div class="popup-part">
-                <p>Vocab 1 and meaning</p>
-                <button class="add-button">Add to list</button>
-              </div>
-              <div class="popup-part">
-                <p>Vocab 1 and meaning</p>
-                <button class="add-button">Add to list</button>
-              </div>
-              <div class="popup-part">
-                <p>Vocab 1 and meaning</p>
-                <button class="add-button">Add to list</button>
-              </div>
-              <div class="popup-part">
-                <p>Vocab 1 and meaning</p>
-                <button class="add-button">Add to list</button>
-              </div>
-              <div class="popup-part">
-                <p>Vocab 1 and meaning</p>
-                <button class="add-button">Add to list</button>
-              </div>
-              <div class="popup-part">
-                <p>Vocab 1 and meaning</p>
-                <button class="add-button">Add to list</button>
-              </div>
-              <div class="popup-part">
-                <p>Vocab 1 and meaning</p>
-                <button class="add-button">Add to list</button>
-              </div>
-              <div class="popup-part">
-                <p>Vocab 1 and meaning</p>
-                <button class="add-button">Add to list</button>
-              </div>
-              <div class="popup-part">
-                <p>Vocab 1 and meaning</p>
-                <button class="add-button">Add to list</button>
-              </div>
-              <div class="popup-part">
-                <p>Vocab 1 and meaning</p>
-                <button class="add-button">Add to list</button>
-              </div>
-              <div class="popup-part">
-                <p>Vocab 1 and meaning</p>
-                <button class="add-button">Add to list</button>
-              </div>
-              <div class="popup-part">
-                <p>Vocab 1 and meaning</p>
-                <button class="add-button">Add to list</button>
-              </div>
             </div>
-            {% comment %} css lai close nay {% endcomment %}
+            {% comment %}css lai close nay{% endcomment %}
             <button class="close-button">.X.</button>
           </div>
         </div>
 
         <div class="music" id="playlistContent">
-          <!--Playlist-->
+          <!-- Playlist -->
           {% for music in musics %}
             <div class="song">
               <div class="info">
@@ -155,55 +100,57 @@
             <hr />
           {% endfor %}
         </div>
-        <!--Lyrics-->
+        <!-- Lyrics -->
         <div class="lyrics" id="lyricsContent" style="display: none;">
-          <h2 class="lyrics-title" style="color: aliceblue; margin:0 0 0 20px;">Lyrics</h2> 
+          <h2 class="lyrics-title" style="color: aliceblue; margin:0 0 0 20px;">Lyrics</h2>
           <div class="lyrics-content" style="margin-top: 0;">
             <div class="titre">
               <p class="lyricstxt" style="color:aliceblue" style="padding-left: 30px;"></p>
             </div>
           </div>
         </div>
-      </div> 
+      </div>
     </div>
 
     <div>
-      {% comment %} <li><a class="add-song-button" href="/add"><i class="fas fa-plus"></i></a></li> {% endcomment %}
-      <li><a class="main-button" href="/"><i class="fa-solid fa-house"></i></a></li>  
+      {% comment %} <li>
+        <a class="add-song-button" href="/add"><i class="fas fa-plus"></i></a>
+      </li> {% endcomment %}
+      <li>
+        <a class="main-button" href="/"><i class="fa-solid fa-house"></i></a>
+      </li>
       {% comment %} <a class="vocab-button" href="/vocab"><i class="fa-solid fa-book-open"></i></a> {% endcomment %}
     </div>
 
-
-    {{ music_list|json_script:'musics' }} <!--convert music_list to json string and assign to js var called 'musics'-->
+    {{ music_list|json_script:'musics' }} <!-- convert music_list to json string and assign to js var called 'musics' -->
 
     <script src="{% static 'js/home.js' %}"></script>
     <script>
       function toggleContent() {
-        var toggleButton = document.getElementById('toggleButton');
-        var toggleIcon = document.getElementById('toggleIcon');
-        var playlistContent = document.getElementById('playlistContent');
-        var lyricsContent = document.getElementById('lyricsContent');
-        var contentTitle = document.getElementById('contentTitle');
-    
+        var toggleButton = document.getElementById('toggleButton')
+        var toggleIcon = document.getElementById('toggleIcon')
+        var playlistContent = document.getElementById('playlistContent')
+        var lyricsContent = document.getElementById('lyricsContent')
+        var contentTitle = document.getElementById('contentTitle')
+      
         if (playlistContent.style.display === 'none') {
           // Show playlist and update button icon
-          playlistContent.style.display = 'block';
-          lyricsContent.style.display = 'none';
-          toggleIcon.classList.remove('fas', 'fa-play');
-          toggleIcon.classList.add('fas', 'fa-bars');
-          toggleButton.title = 'Show Lyrics';
-          contentTitle.textContent = 'Show Lyrics';
+          playlistContent.style.display = 'block'
+          lyricsContent.style.display = 'none'
+          toggleIcon.classList.remove('fas', 'fa-play')
+          toggleIcon.classList.add('fas', 'fa-bars')
+          toggleButton.title = 'Show Lyrics'
+          contentTitle.textContent = 'Show Lyrics'
         } else {
           // Show lyrics and update button icon
-          playlistContent.style.display = 'none';
-          lyricsContent.style.display = 'block';
-          toggleIcon.classList.remove('fas', 'fa-bars');
-          toggleIcon.classList.add('fas', 'fa-play');
-          toggleButton.title = 'Show Playlist';
-          contentTitle.textContent = 'Show Playlist';
+          playlistContent.style.display = 'none'
+          lyricsContent.style.display = 'block'
+          toggleIcon.classList.remove('fas', 'fa-bars')
+          toggleIcon.classList.add('fas', 'fa-play')
+          toggleButton.title = 'Show Playlist'
+          contentTitle.textContent = 'Show Playlist'
         }
       }
-    </script> 
-    
+    </script>
   </body>
 </html>

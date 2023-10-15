@@ -21,10 +21,11 @@ def add(request):
         audio = request.FILES.get('audio_file')
         image = request.FILES.get('cover_image')
         lyric = request.POST.get('lyrics')
+        # Vocab = request.POST.get('vocab')
         
         data = Music.objects.create(
             title=title, artist=artist, audio_file=audio, cover_image=image, lyrics=lyric
-            # 
+            # , Vocab = Vocab
         )
         data.save()
         return redirect('music:home')
