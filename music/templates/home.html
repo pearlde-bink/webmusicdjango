@@ -65,7 +65,74 @@
             </button>
              <h2 id="contentTitle" style="margin-left: 20px;">Lyrics</h2>
           </div>
-          <img draggable="false" class="playlist-icon" src="/static/images/subbg.gif" alt="" />
+
+          <!--vocab-->
+          <button class="open-button">
+            <img draggable="false" class="playlist-icon" src="/static/images/subbg.gif" alt="" />
+            {% comment %} <p>Open</p> {% endcomment %}
+          </button>
+          <div class="popup-container">
+            <div class="popup-content">
+              <div class="popup-part">
+                <p>Vocab 1 and meaning Vocab 1 and meaning</p>
+                <button class="add-button">Add to list</button>
+              </div>
+              <div class="popup-part">
+                <p>Vocab 1 and meaning</p>
+                <button class="add-button">Add to list</button>
+              </div>
+              <div class="popup-part">
+                <p>Vocab 1 and meaning</p>
+                <button class="add-button">Add to list</button>
+              </div>
+              <div class="popup-part">
+                <p>Vocab 1 and meaning</p>
+                <button class="add-button">Add to list</button>
+              </div>
+              <div class="popup-part">
+                <p>Vocab 1 and meaning</p>
+                <button class="add-button">Add to list</button>
+              </div>
+              <div class="popup-part">
+                <p>Vocab 1 and meaning</p>
+                <button class="add-button">Add to list</button>
+              </div>
+              <div class="popup-part">
+                <p>Vocab 1 and meaning</p>
+                <button class="add-button">Add to list</button>
+              </div>
+              <div class="popup-part">
+                <p>Vocab 1 and meaning</p>
+                <button class="add-button">Add to list</button>
+              </div>
+              <div class="popup-part">
+                <p>Vocab 1 and meaning</p>
+                <button class="add-button">Add to list</button>
+              </div>
+              <div class="popup-part">
+                <p>Vocab 1 and meaning</p>
+                <button class="add-button">Add to list</button>
+              </div>
+              <div class="popup-part">
+                <p>Vocab 1 and meaning</p>
+                <button class="add-button">Add to list</button>
+              </div>
+              <div class="popup-part">
+                <p>Vocab 1 and meaning</p>
+                <button class="add-button">Add to list</button>
+              </div>
+              <div class="popup-part">
+                <p>Vocab 1 and meaning</p>
+                <button class="add-button">Add to list</button>
+              </div>
+              <div class="popup-part">
+                <p>Vocab 1 and meaning</p>
+                <button class="add-button">Add to list</button>
+              </div>
+            </div>
+            {% comment %} css lai close nay {% endcomment %}
+            <button class="close-button">.X.</button>
+          </div>
         </div>
 
         <div class="music" id="playlistContent">
@@ -74,7 +141,7 @@
             <div class="song">
               <div class="info">
                 <div class="song-thumbnail">
-                  <img src="/media/{{ music.cover_image }}" alt="" />
+                  <img src="/home/media/{{ music.cover_image }}" alt="" />
                 </div>
                 <div class="titles">
                   <h4 id="title{{ forloop.counter0 }}">{{ music.title }}</h4>
@@ -100,11 +167,14 @@
       </div> 
     </div>
 
-    <a class="add-button" href="/add"><i class="fas fa-plus"></i></a>
-    {% comment %} <a class="main-button" href="/main"><i class="fa-regular fa-house"></i></a>
-    <a class="vocab-button" href="/vocab"><i class="fa-solid fa-book-open"></i></a> {% endcomment %}
+    <div>
+      {% comment %} <li><a class="add-song-button" href="/add"><i class="fas fa-plus"></i></a></li> {% endcomment %}
+      <li><a class="main-button" href="/"><i class="fa-solid fa-house"></i></a></li>  
+      {% comment %} <a class="vocab-button" href="/vocab"><i class="fa-solid fa-book-open"></i></a> {% endcomment %}
+    </div>
 
-    {{ music_list|json_script:'musics' }}
+
+    {{ music_list|json_script:'musics' }} <!--convert music_list to json string and assign to js var called 'musics'-->
 
     <script src="{% static 'js/home.js' %}"></script>
     <script>

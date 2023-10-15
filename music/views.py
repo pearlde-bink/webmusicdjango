@@ -1,9 +1,14 @@
 from django.shortcuts import redirect, render
 from django.http.response import HttpResponse
 from django.http import HttpResponse
-from . models import Music
+from . models import Music, Vocab
 
 # Create your views here.
+def main(request):
+    music = Music.objects.all().order_by('title')
+    music_list = list(Music.objects.all().order_by('title').values())
+    return render(request, 'main.html', {'musics': music, 'music_list': music_list})
+
 def index(request):
     music = Music.objects.all().order_by('title')
     music_list = list(Music.objects.all().order_by('title').values())
@@ -25,8 +30,14 @@ def add(request):
         return redirect('music:home')
     return render(request, 'add.html')
 
-# def main(request):
-#     return render(request, 'main.html')
-
-# def vocab(request):
-#     return render(request, 'vocab.html')
+def vocab(request):
+    if(request.method == "POST"):
+        eng = request.POST.get('eng')
+        meaning = request.POST.get('meaning')
+        
+        data = Vocab.objects.create(
+            eng=eng, type=type, meaning=meaning
+        )
+        data.save()
+        # return redirect('music:home')
+    return render(request, 'vocab.html')
