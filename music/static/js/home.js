@@ -6,8 +6,8 @@ const audio_tracks = document.querySelectorAll('.play-button')
 const song_title = document.querySelector('.song-title')
 const artist = document.querySelector('.artist')
 const lyrics = document.querySelector('.lyricstxt')
+const vocab = document.querySelector('.vocabtxt')
 const music_img = document.querySelector('.music_img')
-const vocabs = document.querySelector('.vocab')
 const main_div = document.querySelector(".main_div");
 const progress = document.querySelector(".progress");
 const curr_time = document.querySelector("#current_time");
@@ -28,8 +28,8 @@ const setSRC = () => {
     song_title.textContent = musics[musicIndex].title
     artist.textContent = musics[musicIndex].artist
     music_img.setAttribute('src', `/home/media/${musics[musicIndex].cover_image}`)
-    lyrics.textContent = musics[musicIndex].lyrics || "No available lyrics";
-    vocabs.textContent = musics[musicIndex].vocabs
+    lyrics.textContent = musics[musicIndex].lyrics || "No available lyrics"
+    vocab.textContent = musics[musicIndex].vocabulary
 
 }
 
@@ -189,26 +189,27 @@ volumeSlider.addEventListener('input', function() {
   audioPlayer.volume = this.value;
 });
 
+
 // vocab
-document.addEventListener('DOMContentLoaded', () => {
-    const popupContainer = document.querySelector('.popup-container');
-    const openButton = document.querySelector('.open-button');
-    const closeButton = document.querySelector('.close-button');
-    const addButtonList = document.querySelectorAll('.add-button');
+// document.addEventListener('DOMContentLoaded', () => {
+//     const popupContainer = document.querySelector('.popup-container');
+//     const openButton = document.querySelector('.open-button');
+//     const closeButton = document.querySelector('.close-button');
+//     const addButtonList = document.querySelectorAll('.add-button');
   
-    openButton.addEventListener('click', () => {
-      popupContainer.style.display = 'flex';
-    });
+//     openButton.addEventListener('click', () => {
+//       popupContainer.style.display = 'flex';
+//     });
   
-    closeButton.addEventListener('click', () => {
-      popupContainer.style.display = 'none';
-    });
+//     closeButton.addEventListener('click', () => {
+//       popupContainer.style.display = 'none';
+//     });
   
-    addButtonList.forEach((addButton) => {
-      addButton.addEventListener('click', () => {
-        const text = addButton.previousElementSibling.textContent;
-        // Add code to save the text to the database
-        console.log(`Adding "${text}" to the database`);
-      });
-    });
-  });
+//     addButtonList.forEach((addButton) => {
+//       addButton.addEventListener('click', () => {
+//         const text = addButton.previousElementSibling.textContent;
+//         // Add code to save the text to the database
+//         console.log(`Adding "${text}" to the database`);
+//       });
+//     });
+// });

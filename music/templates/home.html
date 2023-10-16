@@ -64,19 +64,19 @@
           </div>
 
           <!-- vocab -->
-          <button class="open-button">
-            <img draggable="false" class="playlist-icon" src="/static/images/subbg.gif" alt="" />
-            {% comment %} <p>Open</p> {% endcomment %}
-          </button>
-          <div class="popup-container">
+          {% comment %} <div class="popup-container">
             <div class="popup-content">
               <div class="popup-part">
                 <p>Vocab 1 and meaning Vocab 1 and meaning</p>
                 <button class="add-button">Add to list</button>
               </div>
             </div>
-            {% comment %}css lai close nay{% endcomment %}
             <button class="close-button">.X.</button>
+          </div>
+            {% endcomment %}
+          <div class="playlist-title">
+            <button id="vocabButton" class="vocab-button" onclick="vocabContent()"><i id="vocabIcon" class="fa-solid fa-book"></i></button>
+            <h2 id="contentTitleVocab" style="margin-left: 20px;">Vocabulary</h2>
           </div>
         </div>
 
@@ -109,6 +109,17 @@
             </div>
           </div>
         </div>
+
+        <!--Vocab-->
+        <div class="vocab" id="vocabContent" style="display: none;">
+          <h2 class="vocab-title" style="color: aliceblue; margin:0 0 0 20px;">Vocabulary</h2>
+          <div class="vocab-content" style="margin-top: 0;">
+            <div class="titre">
+              <p class="vocabtxt" style="color:aliceblue" style="padding-left: 30px;"></p>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
 
@@ -129,26 +140,76 @@
       function toggleContent() {
         var toggleButton = document.getElementById('toggleButton')
         var toggleIcon = document.getElementById('toggleIcon')
+        var vocabIcon = document.getElementById('vocabIcon')
         var playlistContent = document.getElementById('playlistContent')
         var lyricsContent = document.getElementById('lyricsContent')
         var contentTitle = document.getElementById('contentTitle')
+        var vocabContent = document.getElementById('vocabContent')
+        var vocabButton = document.getElementById('vocabButton')
+        var contentTitleVocab = document.getElementById('contentTitleVocab')
       
         if (playlistContent.style.display === 'none') {
-          // Show playlist and update button icon
           playlistContent.style.display = 'block'
           lyricsContent.style.display = 'none'
+          vocabContent.style.display = 'none'
+          toggleIcon.classList.remove('fas', 'fa-play')
+          toggleIcon.classList.add('fas', 'fa-bars')
+          vocabIcon.classList.remove('fas', 'fa-play')
+          vocabIcon.classList.add('fas', 'fa-bars')
+          toggleButton.title = 'Show Lyrics'
+          contentTitle.textContent = 'Show Lyrics'
+          vocabButton.title = 'Vocab list'
+          contentTitleVocab.textContent = 'Vocab list'
+        } else {
+          playlistContent.style.display = 'none'
+          lyricsContent.style.display = 'block'
+          vocabContent.style.display = 'none'
+          toggleIcon.classList.remove('fas', 'fa-bars')
+          toggleIcon.classList.add('fas', 'fa-play')
+          vocabIcon.classList.remove('fas', 'fa-bars')
+          vocabIcon.classList.add('fas', 'fa-play')
+          toggleButton.title = 'Playlist'
+          contentTitle.textContent = 'Playlist'
+          vocabButton.title = 'Playlist'
+          contentTitleVocab.textContent = 'Playlist'
+        }
+      }
+      
+      function vocabContent(){
+        var vocabButton = document.getElementById('vocabButton')
+        var vocabIcon = document.getElementById('vocabIcon')
+        var toggleIcon = document.getElementById('toggleIcon')
+        var playlistContent = document.getElementById('playlistContent')
+        var lyricsContent = document.getElementById('lyricsContent')
+        var vocabContent = document.getElementById('vocabContent')
+        var contentTitleVocab = document.getElementById('contentTitleVocab')
+        var toggleButton = document.getElementById('toggleButton')
+        var contentTitle = document.getElementById('contentTitle')
+
+        if(playlistContent.style.display === 'none'){
+          playlistContent.style.display = 'block'
+          lyricsContent.style.display = 'none'
+          vocabContent.style.display = 'none'
+          vocabIcon.classList.remove('fas', 'fa-play')
+          vocabIcon.classList.add('fas', 'fa-bars')
           toggleIcon.classList.remove('fas', 'fa-play')
           toggleIcon.classList.add('fas', 'fa-bars')
           toggleButton.title = 'Show Lyrics'
           contentTitle.textContent = 'Show Lyrics'
+          vocabButton.title = 'Vocab list'
+          contentTitleVocab.textContent = 'Vocab list'
         } else {
-          // Show lyrics and update button icon
           playlistContent.style.display = 'none'
-          lyricsContent.style.display = 'block'
+          lyricsContent.style.display = 'none'
+          vocabContent.style.display = 'block'
+          vocabIcon.classList.remove('fas', 'fa-bars')
+          vocabIcon.classList.add('fas', 'fa-play')
           toggleIcon.classList.remove('fas', 'fa-bars')
           toggleIcon.classList.add('fas', 'fa-play')
-          toggleButton.title = 'Show Playlist'
-          contentTitle.textContent = 'Show Playlist'
+          vocabButton.title = 'Playlist'
+          contentTitleVocab.textContent = 'Playlist'
+          toggleButton.title = 'Playlist'
+          contentTitle.textContent = 'Playlist'
         }
       }
     </script>

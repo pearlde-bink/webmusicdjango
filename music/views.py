@@ -1,7 +1,7 @@
 from django.shortcuts import redirect, render
 from django.http.response import HttpResponse
 from django.http import HttpResponse
-from . models import Music, Vocab
+from . models import Music
 
 # Create your views here.
 def main(request):
@@ -21,24 +21,25 @@ def add(request):
         audio = request.FILES.get('audio_file')
         image = request.FILES.get('cover_image')
         lyric = request.POST.get('lyrics')
+        vocab = request.POST.get('vocabulary')
         # Vocab = request.POST.get('vocab')
         
         data = Music.objects.create(
-            title=title, artist=artist, audio_file=audio, cover_image=image, lyrics=lyric
+            title=title, artist=artist, audio_file=audio, cover_image=image, lyrics=lyric, vocabulary=vocab
             # , Vocab = Vocab
         )
         data.save()
         return redirect('music:home')
     return render(request, 'add.html')
 
-def vocab(request):
-    if(request.method == "POST"):
-        eng = request.POST.get('eng')
-        meaning = request.POST.get('meaning')
+# def vocab(request):
+#     if(request.method == "POST"):
+#         eng = request.POST.get('eng')
+#         meaning = request.POST.get('meaning')
         
-        data = Vocab.objects.create(
-            eng=eng, type=type, meaning=meaning
-        )
-        data.save()
-        # return redirect('music:home')
-    return render(request, 'vocab.html')
+#         data = Vocab.objects.create(
+#             eng=eng, type=type, meaning=meaning
+#         )
+#         data.save()
+#         # return redirect('music:home')
+#     return render(request, 'vocab.html')
