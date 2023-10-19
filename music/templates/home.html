@@ -64,16 +64,6 @@
           </div>
 
           <!-- vocab -->
-          {% comment %} <div class="popup-container">
-            <div class="popup-content">
-              <div class="popup-part">
-                <p>Vocab 1 and meaning Vocab 1 and meaning</p>
-                <button class="add-button">Add to list</button>
-              </div>
-            </div>
-            <button class="close-button">.X.</button>
-          </div>
-            {% endcomment %}
           <div class="playlist-title">
             <button id="vocabButton" class="vocab-button" onclick="vocabContent()"><i id="vocabIcon" class="fa-solid fa-book"></i></button>
             <h2 id="contentTitleVocab" style="margin-left: 20px;">Vocabulary</h2>
@@ -110,7 +100,7 @@
           </div>
         </div>
 
-        <!--Vocab-->
+        <!-- Vocab -->
         <div class="vocab" id="vocabContent" style="display: none;">
           <h2 class="vocab-title" style="color: aliceblue; margin:0 0 0 20px;">Vocabulary</h2>
           <div class="vocab-content" style="margin-top: 0;">
@@ -119,17 +109,16 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
 
     <div>
-      {% comment %} <li>
+      <div>
         <a class="add-song-button" href="/add"><i class="fas fa-plus"></i></a>
-      </li> {% endcomment %}
-      <li>
+      </div>
+      <div>
         <a class="main-button" href="/"><i class="fa-solid fa-house"></i></a>
-      </li>
+      </div>
       {% comment %} <a class="vocab-button" href="/vocab"><i class="fa-solid fa-book-open"></i></a> {% endcomment %}
     </div>
 
@@ -175,7 +164,7 @@
         }
       }
       
-      function vocabContent(){
+      function vocabContent() {
         var vocabButton = document.getElementById('vocabButton')
         var vocabIcon = document.getElementById('vocabIcon')
         var toggleIcon = document.getElementById('toggleIcon')
@@ -185,8 +174,8 @@
         var contentTitleVocab = document.getElementById('contentTitleVocab')
         var toggleButton = document.getElementById('toggleButton')
         var contentTitle = document.getElementById('contentTitle')
-
-        if(playlistContent.style.display === 'none'){
+      
+        if (playlistContent.style.display === 'none') {
           playlistContent.style.display = 'block'
           lyricsContent.style.display = 'none'
           vocabContent.style.display = 'none'

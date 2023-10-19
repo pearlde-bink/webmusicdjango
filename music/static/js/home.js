@@ -7,6 +7,7 @@ const song_title = document.querySelector('.song-title')
 const artist = document.querySelector('.artist')
 const lyrics = document.querySelector('.lyricstxt')
 const vocab = document.querySelector('.vocabtxt')
+const example = document.querySelector('.exampletxt')
 const music_img = document.querySelector('.music_img')
 const main_div = document.querySelector(".main_div");
 const progress = document.querySelector(".progress");
@@ -30,6 +31,7 @@ const setSRC = () => {
     music_img.setAttribute('src', `/home/media/${musics[musicIndex].cover_image}`)
     lyrics.textContent = musics[musicIndex].lyrics || "No available lyrics"
     vocab.textContent = musics[musicIndex].vocabulary
+    example.textContent = musics[musicIndex].example //.example la lay thuoc tinh example o class Music
 
 }
 

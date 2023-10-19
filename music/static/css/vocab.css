@@ -1,0 +1,111 @@
+.background{
+    display: flex;
+    position: relative;
+    background-image:  url("/static/images/bg5.gif");
+    width: 100vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex-direction: row;
+}
+.music_list{
+    height: 85%;
+    overflow-y: auto;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.3); 
+  }
+.music_list{
+    padding: 50px;
+    display: flex;
+    width: 25%;
+    flex-direction: column;
+    align-items: center;
+}
+.list{
+    overflow: auto;
+}
+.list::-webkit-scrollbar {
+    width: 0px;
+  }
+  
+.list::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+  }
+  
+.list::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 4px;
+  }
+  
+.list::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+  }
+
+  .song {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 12px;
+    border-radius: 8px;
+    font-size: 20px;
+    letter-spacing: 1px;
+    color: white;
+    background-color: #333;
+  }
+  div h4 {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    line-height: 1.2;
+  }
+  .fas {
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    filter: drop-shadow(0 1.2rem 3rem 0.5rem rgba(0, 0, 0, 0.4));
+  }
+  .info {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .song-thumbnail {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .song-thumbnail img {
+    width: 70px;
+    height: 70px;
+    margin: 10px;
+    border-radius: 4px;
+    margin-right: 20px;
+  }
+  i {
+    margin: 10px;
+    font-size: 32px;
+    margin-right: 35px;
+    cursor: pointer;
+  }
+
+
+.example{
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    position: relative;
+
+}
+.flash_card{
+    display: flex;
+    height: 50%;
+}
+.example_list{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
