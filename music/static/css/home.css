@@ -46,6 +46,8 @@ body {
   background: transparent
     linear-gradient(to bottom, rgba(10, 11, 31, 0.9) 50%, rgb(10, 11, 31) 70%)
     repeat scroll 0 0;
+  /* height: 100vh; */
+  overflow-y: auto;
 }
 
 /* Right Side Content */
@@ -75,6 +77,9 @@ body {
 .playlist-title h1 {
   letter-spacing: 2px;
 }
+.playlist-title:active{
+  color: aquamarine;
+}
 .playlist-icon {
   width: 42px;
   height: 35px;
@@ -84,8 +89,42 @@ body {
 
 #lyricsContent.lyrics {
   max-height: 85%;
+  min-width: 50%;
   overflow-y: auto;
   white-space: pre-line;
+}
+.lyrics, .vocab {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  font-family: "Arial", sans-serif;
+  font-size: 20px;
+  padding: 20px;
+  margin: 0px;
+  text-align: center;
+  box-sizing: border-box;
+}
+.lyrics, .titre, .lyricstxt, .vocab, .vocabtxt{
+  width: 100%;
+}
+
+.lyrics-content, .vocab-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.titre{
+  display: block;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.lyricstxt, .vocabtxt{
+  text-align: center;
+  white-space: pre-line;
+  overflow-x: auto;
 }
 
 #vocabContent.vocab{
@@ -239,6 +278,7 @@ h3 {
 }
 .titre {
   width: 50%;
+  display: block;
 }
 .volume-controls {
   margin-top: 30px;
@@ -296,7 +336,7 @@ h3 {
   text-decoration: none;
   border-radius: 100%;
   text-align: center;
-  bottom: 30px;
+  top: 310px;
   right: 30px;
   background: transparent
     linear-gradient(to bottom, rgba(148, 38, 110, 0.9) 50%, rgb(65, 14, 53) 70%)
@@ -322,7 +362,7 @@ h3 {
   text-decoration: none;
   border-radius: 100%;
   text-align: center;
-  bottom: 30px;
+  top: 320px;
   right: 30px;
   background: transparent
     linear-gradient(to bottom, rgba(58, 64, 175, 0.9) 50%, rgb(33, 37, 104) 70%)
