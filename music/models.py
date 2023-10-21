@@ -11,9 +11,7 @@ class Music(models.Model):
     cover_image = models.ImageField(upload_to='music_image/')
     lyrics = models.TextField(blank=True, null=True)
     vocabulary = models.TextField(blank=True, null=True)
-    # vocabs = models.ManyToManyField('Vocab', related_name='music') 
     example = models.TextField(blank=True, null=True)
-    #The related_name attribute is set to 'music' to specify the reverse relation from Vocab to Music.
     
     def __str__(self):
         return self.title
@@ -32,5 +30,4 @@ class Music(models.Model):
     
 #     class META:
 #         ordering = ['eng']
-        
     

@@ -33,17 +33,6 @@ def add(request):
         return redirect('music:home')
     return render(request, 'add.html')
 
-# def vocab(request):
-#     if(request.method == "POST"):
-#         eng = request.POST.get('eng')
-#         meaning = request.POST.get('meaning')
-        
-#         data = Vocab.objects.create(
-#             eng=eng, type=type, meaning=meaning
-#         )
-#         data.save()
-#         # return redirect('music:home')
-#     return render(request, 'vocab.html')
 def vocabulary(request):
     # vocab = Music.objects.all().order_by('eng')
     # vocab_example = Music.objects.all().order_by('eng').values('eng', 'meaning')

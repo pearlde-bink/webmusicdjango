@@ -94,25 +94,17 @@ i {
   cursor: pointer;
 }
 
-
-.example{
-  display: flex;
-  flex-direction: column;
-  padding: 50px;
-  position: relative;
-
-}
 .flash_card{
   display: flex;
   height: 50%;
 }
-.example_list{
+/* .example_list{
   display: flex;
   position: relative;
   justify-content: center;
   align-items: center;
   color: white;
-}
+} */
 
 .song div:hover{
   color: rgb(102, 213, 224);
@@ -120,6 +112,7 @@ i {
 }
 .song:hover {
   transform: scale(1.1);
+  background-color: #7d6464;
 }
 
 h3 {
@@ -226,8 +219,10 @@ h3 {
   text-decoration: none;
   border-radius: 100%;
   text-align: center;
-  bottom: 30px;
-  right: 30px;
+  /* top: 740px;
+  left: 900px; */
+  top: 700px;
+  left: 850px;
   background: transparent
     linear-gradient(to bottom, rgba(102, 39, 109, 0.9) 50%, rgb(110, 30, 93) 70%)
     repeat scroll 0 0;
@@ -251,8 +246,10 @@ h3 {
   text-decoration: none;
   border-radius: 100%;
   text-align: center;
-  bottom: 30px;
-  right: 30px;
+  /* top: 750px;
+  left: 900px; */
+  top: 710px;
+  left: 850px;
   background: transparent
     linear-gradient(to bottom, rgba(58, 64, 175, 0.9) 50%, rgb(33, 37, 104) 70%)
     repeat scroll 0 0;
@@ -263,3 +260,29 @@ h3 {
   margin: 0;
   font-size: 40px;
 } 
+
+.example{
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  position: relative;
+
+}
+.exampletxt{
+  display: block;
+}
+
+.titre {
+  width: 50%;
+}
+
+#exampleContent.lyrics {
+  max-height: 85%;
+  overflow-y: auto;
+  white-space: pre-line;
+}
+#exampleContent.example {
+  max-height: 85%;
+  overflow-y: auto;
+  white-space: pre-line;
+}

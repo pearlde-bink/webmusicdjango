@@ -11,9 +11,9 @@ const example = document.querySelector('.exampletxt')
 const music_img = document.querySelector('.music_img')
 const main_div = document.querySelector(".main_div");
 const progress = document.querySelector(".progress");
+const progress_div = document.querySelector('.progress_div');
 const curr_time = document.querySelector("#current_time");
 const dur_time = document.querySelector("#duration");
-const progress_div = document.querySelector('.progress_div');
 
 
 // initilize music indexing
@@ -25,13 +25,13 @@ const musics = JSON.parse(document.getElementById('musics').textContent)
 // loading a set detail of music in UI
 const setSRC = () => {
 
-    player.src = `/home/media/${musics[musicIndex].audio_file}`
+    player.src = `/media/${musics[musicIndex].audio_file}`
     song_title.textContent = musics[musicIndex].title
     artist.textContent = musics[musicIndex].artist
-    music_img.setAttribute('src', `/home/media/${musics[musicIndex].cover_image}`)
+    music_img.setAttribute('src', `/media/${musics[musicIndex].cover_image}`)
     lyrics.textContent = musics[musicIndex].lyrics || "No available lyrics"
     vocab.textContent = musics[musicIndex].vocabulary
-    example.textContent = musics[musicIndex].example //.example la lay thuoc tinh example o class Music
+    // example.textContent = musics[musicIndex].example
 
 }
 
@@ -191,27 +191,3 @@ volumeSlider.addEventListener('input', function() {
   audioPlayer.volume = this.value;
 });
 
-
-// vocab
-// document.addEventListener('DOMContentLoaded', () => {
-//     const popupContainer = document.querySelector('.popup-container');
-//     const openButton = document.querySelector('.open-button');
-//     const closeButton = document.querySelector('.close-button');
-//     const addButtonList = document.querySelectorAll('.add-button');
-  
-//     openButton.addEventListener('click', () => {
-//       popupContainer.style.display = 'flex';
-//     });
-  
-//     closeButton.addEventListener('click', () => {
-//       popupContainer.style.display = 'none';
-//     });
-  
-//     addButtonList.forEach((addButton) => {
-//       addButton.addEventListener('click', () => {
-//         const text = addButton.previousElementSibling.textContent;
-//         // Add code to save the text to the database
-//         console.log(`Adding "${text}" to the database`);
-//       });
-//     });
-// });

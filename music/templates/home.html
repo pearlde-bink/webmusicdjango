@@ -63,7 +63,6 @@
             <h2 id="contentTitle" style="margin-left: 20px;">Lyrics</h2>
           </div>
 
-          <!-- vocab -->
           <div class="playlist-title">
             <button id="vocabButton" class="vocab-button" onclick="vocabContent()"><i id="vocabIcon" class="fa-solid fa-book"></i></button>
             <h2 id="contentTitleVocab" style="margin-left: 20px;">Vocabulary</h2>
@@ -76,7 +75,7 @@
             <div class="song">
               <div class="info">
                 <div class="song-thumbnail">
-                  <img src="/home/media/{{ music.cover_image }}" alt="" />
+                  <img src="/media/{{ music.cover_image }}" alt="" />
                 </div>
                 <div class="titles">
                   <h4 id="title{{ forloop.counter0 }}">{{ music.title }}</h4>
